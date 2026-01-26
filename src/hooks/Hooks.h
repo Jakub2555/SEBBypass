@@ -10,10 +10,6 @@ namespace hooks
 
     // -------- HOOKS --------
 
-    typedef BOOL(__stdcall* BitBlt_f)(HDC, int, int, int, int, HDC, int, int, DWORD);
-    inline BitBlt_f oBitBlt = nullptr;
-    BOOL __stdcall HkBitBlt(HDC hdcDest, int x, int y, int cx, int cy, HDC hdcSrc, int x1, int y1, DWORD rop);
-
     typedef LRESULT(__stdcall* CallNextHookEx_f)(HHOOK, int, WPARAM, LPARAM);
     inline CallNextHookEx_f oCallNextHookEx = nullptr;
     LRESULT __stdcall HkCallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam, LPARAM lParam);
@@ -26,10 +22,6 @@ namespace hooks
     inline NtQuerySystemInformation_f oNtQuerySystemInformation = nullptr;
     NTSTATUS __stdcall HkNtQuerySystemInformation(UINT SystemInformationClass, PVOID SystemInformation, ULONG SystemInformationLength, PULONG ReturnLength);
 
-    typedef BOOL(__stdcall* EmptyClipboard_f)();
-    inline EmptyClipboard_f oEmptyClipboard = nullptr;
-    BOOL __stdcall HkEmptyClipboard();
-
     typedef HHOOK(__stdcall* SetWindowsHookExA_f)(int, HOOKPROC, HINSTANCE, DWORD);
     inline SetWindowsHookExA_f oSetWindowsHookExA = nullptr;
     HHOOK __stdcall HkSetWindowsHookExA(int idHook, HOOKPROC lpfn, HINSTANCE hmod, DWORD dwThreadId);
@@ -37,8 +29,4 @@ namespace hooks
     typedef BOOL(__stdcall* SetWindowDisplayAffinity_f)(HWND, DWORD);
     inline SetWindowDisplayAffinity_f oSetWindowDisplayAffinity = nullptr;
     BOOL __stdcall HkSetWindowDisplayAffinity(HWND window, DWORD affinity);
-
-    typedef BOOL(__stdcall* GetWindowDisplayAffinity_f)(HWND, DWORD*);
-    inline GetWindowDisplayAffinity_f oGetWindowDisplayAffinity = nullptr;
-    BOOL __stdcall HkGetWindowDisplayAffinity(HWND window, DWORD* affinity);
 }
