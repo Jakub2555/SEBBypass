@@ -8,7 +8,7 @@ This is a simple, easily expandable proof of concept demonstrating how to bypass
 - Hides windows of the target process
 - Disables capture of keyboard and mouse input
 - Prevents `WDA_EXCLUDEFROMCAPTURE` from being set, allowing capture of SEB windows
-- ~~Hide window of target process from being captured in screenshots/recording~~
+- Hide window of target process from being captured in screenshots/recording
 
 ## How to Build
 1. Install CMake, Ninja, and Clang

@@ -1,9 +1,13 @@
 #include <Windows.h>
+
 #include <Hooks.h>
+#include "Notepad.h"
 
 void Main()
-{    
+{   
     hooks::Initialize();
+
+    notepad::Launch();
 
     while (true)
     {

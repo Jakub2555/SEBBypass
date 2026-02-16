@@ -9,6 +9,7 @@ set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -m64)
 
 set(MAIN_SRC
     src/Main.cpp
+    src/Notepad.cpp
 )
 
 set(MINHOOK_SRC
